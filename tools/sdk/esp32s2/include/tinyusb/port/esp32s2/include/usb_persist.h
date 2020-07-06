@@ -14,37 +14,44 @@
 
 #pragma once
 
+#include <stdbool.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+/*
+ * USB Persistence API
+ * */
+typedef enum {
+    RESTART_NO_PERSIST,
+    RESTART_PERSIST,
+    RESTART_BOOTLOADER,
+    RESTART_BOOTLOADER_DFU,
+    RESTART_TYPE_MAX
+} restart_type_t;
 
-// Espressif
-#include "driver/periph_ctrl.h"
-#include "freertos/xtensa_api.h"
-#include "esp_intr_alloc.h"
-#include "esp_log.h"
-#include "esp32s2/rom/gpio.h"
-#include "soc/dport_reg.h"
-#include "soc/gpio_sig_map.h"
-#include "soc/usb_periph.h"
-#include "tusb_config.h"
-// TinyUSB
-#include "tusb_option.h"
-#include "descriptors_control.h"
-#include "device/dcd.h"
+/*
+ * Init Persistence reboot system
+ * */
+void usb_persist_init(void);
 
+/*
+ * Enable Persistence reboot
+ * 
+ * Note: Persistence should be enabled when ONLY CDC and DFU are being used
+ * */
+void usb_persist_set_enable(bool enable);
 
-#define USB_EP_DIRECTIONS 2
-#define USB_MAX_EP_NUM 16
+/*
+ * Set Reboot mode. Call before esp_reboot();
+ * */
+void usb_persist_restart(restart_type_t mode);
 
-typedef struct {
-    uint8_t *buffer;
-    uint16_t total_len;
-    uint16_t queued_len;
-    uint16_t max_size;
-    bool short_packet;
-} xfer_ctl_t;
+/*
+ * Check if last boot was persistent
+ * */
+bool usb_persist_this_boot(void);
 
 #ifdef __cplusplus
 }

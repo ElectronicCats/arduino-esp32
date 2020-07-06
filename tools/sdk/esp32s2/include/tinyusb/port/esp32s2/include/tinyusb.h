@@ -74,8 +74,10 @@ extern "C" {
 #endif
 
 typedef struct {
+#if CONFIG_USB_USE_BUILTIN_DESCRIPTORS
     tusb_desc_device_t *descriptor;
     char **string_descriptor;
+#endif /* CONFIG_USB_USE_BUILTIN_DESCRIPTORS */
     bool external_phy;
 } tinyusb_config_t;
 
