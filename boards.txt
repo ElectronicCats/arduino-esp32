@@ -1031,6 +1031,147 @@ micros2.menu.DebugLevel.verbose=Verbose
 micros2.menu.DebugLevel.verbose.build.code_debug=5
 
 ##############################################################
+
+bastwifi.name=Bast WiFi
+
+bastwifi.upload.tool=esptool_py
+bastwifi.upload.maximum_size=1310720
+bastwifi.upload.maximum_data_size=327680
+bastwifi.upload.flags=
+
+bastwifi.serial.disableDTR=false
+bastwifi.serial.disableRTS=false
+
+bastwifi.build.mcu=esp32s2
+bastwifi.build.core=esp32
+bastwifi.build.variant=bastwifi
+bastwifi.build.board=bastwifi
+
+bastwifi.build.serial=1
+bastwifi.build.f_cpu=240000000L
+bastwifi.build.flash_size=4MB
+bastwifi.build.flash_freq=80m
+bastwifi.build.flash_mode=qio
+bastwifi.build.boot=qio
+bastwifi.build.partitions=default
+bastwifi.build.defines=
+
+bastwifi.menu.SerialMode.default=UART0
+bastwifi.menu.SerialMode.default.build.serial=0
+bastwifi.menu.SerialMode.cdc=USB CDC
+bastwifi.menu.SerialMode.cdc.build.serial=1
+
+bastwifi.menu.PSRAM.disabled=Disabled
+bastwifi.menu.PSRAM.disabled.build.defines=
+bastwifi.menu.PSRAM.enabled=Enabled
+bastwifi.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM
+
+bastwifi.menu.PartitionScheme.default=Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS)
+bastwifi.menu.PartitionScheme.default.build.partitions=default
+bastwifi.menu.PartitionScheme.defaultffat=Default 4MB with ffat (1.2MB APP/1.5MB FATFS)
+bastwifi.menu.PartitionScheme.defaultffat.build.partitions=default_ffat
+bastwifi.menu.PartitionScheme.default_8MB=8M Flash (3MB APP/1.5MB FAT)
+bastwifi.menu.PartitionScheme.default_8MB.build.partitions=default_8MB
+bastwifi.menu.PartitionScheme.default_8MB.upload.maximum_size=3342336
+bastwifi.menu.PartitionScheme.minimal=Minimal (1.3MB APP/700KB SPIFFS)
+bastwifi.menu.PartitionScheme.minimal.build.partitions=minimal
+bastwifi.menu.PartitionScheme.no_ota=No OTA (2MB APP/2MB SPIFFS)
+bastwifi.menu.PartitionScheme.no_ota.build.partitions=no_ota
+bastwifi.menu.PartitionScheme.no_ota.upload.maximum_size=2097152
+bastwifi.menu.PartitionScheme.noota_3g=No OTA (1MB APP/3MB SPIFFS)
+bastwifi.menu.PartitionScheme.noota_3g.build.partitions=noota_3g
+bastwifi.menu.PartitionScheme.noota_3g.upload.maximum_size=1048576
+bastwifi.menu.PartitionScheme.noota_ffat=No OTA (2MB APP/2MB FATFS)
+bastwifi.menu.PartitionScheme.noota_ffat.build.partitions=noota_ffat
+bastwifi.menu.PartitionScheme.noota_ffat.upload.maximum_size=2097152
+bastwifi.menu.PartitionScheme.noota_3gffat=No OTA (1MB APP/3MB FATFS)
+bastwifi.menu.PartitionScheme.noota_3gffat.build.partitions=noota_3gffat
+bastwifi.menu.PartitionScheme.noota_3gffat.upload.maximum_size=1048576
+bastwifi.menu.PartitionScheme.huge_app=Huge APP (3MB No OTA/1MB SPIFFS)
+bastwifi.menu.PartitionScheme.huge_app.build.partitions=huge_app
+bastwifi.menu.PartitionScheme.huge_app.upload.maximum_size=3145728
+bastwifi.menu.PartitionScheme.min_spiffs=Minimal SPIFFS (1.9MB APP with OTA/190KB SPIFFS)
+bastwifi.menu.PartitionScheme.min_spiffs.build.partitions=min_spiffs
+bastwifi.menu.PartitionScheme.min_spiffs.upload.maximum_size=1966080
+bastwifi.menu.PartitionScheme.fatflash=16M Flash (2MB APP/12.5MB FAT)
+bastwifi.menu.PartitionScheme.fatflash.build.partitions=ffat
+bastwifi.menu.PartitionScheme.fatflash.upload.maximum_size=2097152
+bastwifi.menu.PartitionScheme.app3M_fat9M_16MB=16M Flash (3MB APP/9MB FATFS)
+bastwifi.menu.PartitionScheme.app3M_fat9M_16MB.build.partitions=app3M_fat9M_16MB
+bastwifi.menu.PartitionScheme.app3M_fat9M_16MB.upload.maximum_size=3145728
+
+bastwifi.menu.CPUFreq.240=240MHz (WiFi)
+bastwifi.menu.CPUFreq.240.build.f_cpu=240000000L
+bastwifi.menu.CPUFreq.160=160MHz (WiFi)
+bastwifi.menu.CPUFreq.160.build.f_cpu=160000000L
+bastwifi.menu.CPUFreq.80=80MHz (WiFi)
+bastwifi.menu.CPUFreq.80.build.f_cpu=80000000L
+bastwifi.menu.CPUFreq.40=40MHz
+bastwifi.menu.CPUFreq.40.build.f_cpu=40000000L
+bastwifi.menu.CPUFreq.20=20MHz
+bastwifi.menu.CPUFreq.20.build.f_cpu=20000000L
+bastwifi.menu.CPUFreq.10=10MHz
+bastwifi.menu.CPUFreq.10.build.f_cpu=10000000L
+
+bastwifi.menu.FlashMode.qio=QIO
+bastwifi.menu.FlashMode.qio.build.flash_mode=dio
+bastwifi.menu.FlashMode.qio.build.boot=qio
+bastwifi.menu.FlashMode.dio=DIO
+bastwifi.menu.FlashMode.dio.build.flash_mode=dio
+bastwifi.menu.FlashMode.dio.build.boot=dio
+bastwifi.menu.FlashMode.qout=QOUT
+bastwifi.menu.FlashMode.qout.build.flash_mode=dout
+bastwifi.menu.FlashMode.qout.build.boot=qout
+bastwifi.menu.FlashMode.dout=DOUT
+bastwifi.menu.FlashMode.dout.build.flash_mode=dout
+bastwifi.menu.FlashMode.dout.build.boot=dout
+
+bastwifi.menu.FlashFreq.80=80MHz
+bastwifi.menu.FlashFreq.80.build.flash_freq=80m
+bastwifi.menu.FlashFreq.40=40MHz
+bastwifi.menu.FlashFreq.40.build.flash_freq=40m
+
+bastwifi.menu.FlashSize.4M=4MB (32Mb)
+bastwifi.menu.FlashSize.4M.build.flash_size=4MB
+bastwifi.menu.FlashSize.8M=8MB (64Mb)
+bastwifi.menu.FlashSize.8M.build.flash_size=8MB
+bastwifi.menu.FlashSize.8M.build.partitions=default_8MB
+bastwifi.menu.FlashSize.2M=2MB (16Mb)
+bastwifi.menu.FlashSize.2M.build.flash_size=2MB
+bastwifi.menu.FlashSize.2M.build.partitions=minimal
+bastwifi.menu.FlashSize.16M=16MB (128Mb)
+bastwifi.menu.FlashSize.16M.build.flash_size=16MB
+
+bastwifi.menu.UploadSpeed.921600=921600
+bastwifi.menu.UploadSpeed.921600.upload.speed=921600
+bastwifi.menu.UploadSpeed.115200=115200
+bastwifi.menu.UploadSpeed.115200.upload.speed=115200
+bastwifi.menu.UploadSpeed.256000.windows=256000
+bastwifi.menu.UploadSpeed.256000.upload.speed=256000
+bastwifi.menu.UploadSpeed.230400.windows.upload.speed=256000
+bastwifi.menu.UploadSpeed.230400=230400
+bastwifi.menu.UploadSpeed.230400.upload.speed=230400
+bastwifi.menu.UploadSpeed.460800.linux=460800
+bastwifi.menu.UploadSpeed.460800.macosx=460800
+bastwifi.menu.UploadSpeed.460800.upload.speed=460800
+bastwifi.menu.UploadSpeed.512000.windows=512000
+bastwifi.menu.UploadSpeed.512000.upload.speed=512000
+
+bastwifi.menu.DebugLevel.none=None
+bastwifi.menu.DebugLevel.none.build.code_debug=0
+bastwifi.menu.DebugLevel.error=Error
+bastwifi.menu.DebugLevel.error.build.code_debug=1
+bastwifi.menu.DebugLevel.warn=Warn
+bastwifi.menu.DebugLevel.warn.build.code_debug=2
+bastwifi.menu.DebugLevel.info=Info
+bastwifi.menu.DebugLevel.info.build.code_debug=3
+bastwifi.menu.DebugLevel.debug=Debug
+bastwifi.menu.DebugLevel.debug.build.code_debug=4
+bastwifi.menu.DebugLevel.verbose=Verbose
+bastwifi.menu.DebugLevel.verbose.build.code_debug=5
+
+##############################################################
+
 magicbit.name=MagicBit
 
 magicbit.upload.tool=esptool_py
