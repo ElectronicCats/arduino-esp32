@@ -1033,6 +1033,8 @@ micros2.menu.DebugLevel.verbose.build.code_debug=5
 ##############################################################
 
 bastwifi.name=Bast WiFi
+bastwifi.vid.0=0x1209
+bastwifi.pid.0=0xBAB0
 
 bastwifi.upload.tool=esptool_py
 bastwifi.upload.maximum_size=1310720
